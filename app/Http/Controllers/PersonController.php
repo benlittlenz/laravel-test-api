@@ -35,7 +35,9 @@ class PersonController extends Controller
         return new PersonResource($person);
     }
 
-    public function update() {
-        
+    public function update(Person $person, Request $request): PersonResource {
+        $person->update($request->all());
+
+        return new PersonResource($person);
     }
 }
