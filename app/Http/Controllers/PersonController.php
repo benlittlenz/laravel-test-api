@@ -40,4 +40,10 @@ class PersonController extends Controller
 
         return new PersonResource($person);
     }
+
+        public function destroy(Person $person) {
+            $person->delete();
+
+            return response()->json();
+    }
 }
